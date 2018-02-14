@@ -160,7 +160,6 @@ public class TicTacToeModel{
         
         /* Check the squares of the board to see if the specified mark is the
            winner */
-        boolean tmp = true;
 		int counter = 0;
 		
 		//check rows

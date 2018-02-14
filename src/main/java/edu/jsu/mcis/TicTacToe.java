@@ -1,4 +1,7 @@
 package edu.jsu.mcis;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class TicTacToe {
 
@@ -21,26 +24,19 @@ public class TicTacToe {
             
         }
         
-        /* Create MVC Objects */
+        /* Create MV Objects */
 
         TicTacToeModel model = new TicTacToeModel(width);
         TicTacToeView view = new TicTacToeView(model);
-        TicTacToeController controller = new TicTacToeController(model, view);
         
-        /* MAIN LOOP */
-
-        while (!model.isGameover()){
-            
-            view.viewModel();
-            controller.controlModel();
-            
-        }
-        
-        /* Game is over; show the final board and the winner */
-
-        view.viewModel();
-
-        view.showResult(model.getResult().toString());
+		/*Initialize the GUI*/
+		
+		JFrame game = new JFrame("Tic-Tac-Toe");
+		game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		game.add(view);
+		game.pack();
+		game.setVisible(true);
 
     }
 }
